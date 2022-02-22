@@ -1,9 +1,10 @@
-#!/bin/bash -xe
+#!/bin/bash -x
 
 docker container ls --all
 
 # Step 0: Clean up
-#docker container rm $(docker container ls --all -q)
+docker container stop $(docker container ls --all -q)
+docker container rm $(docker container ls --all -q)
 #docker rmi 	$(docker images -a -q)
 
 # Step 2: Download and Build the OpenVINO Model Server
