@@ -1,7 +1,5 @@
 #!/bin/bash -x
 
-docker container ls --all
-
 # Step 0: Clean up
 docker container stop $(docker container ls --all -q)
 docker container rm $(docker container ls --all -q)
